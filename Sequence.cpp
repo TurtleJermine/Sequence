@@ -89,7 +89,21 @@ string Sequence::longestConsecutive()
 string Sequence::longestRepeated()
 {
     string longest;
-    
+    int pos;
+    int length=l/2;
+    string a;
+    for(int i=0;i<(l/2);i++)
+    {
+    	length--;
+    	for(int j=0;j<l-2*length;j++)
+    	{
+    		longest.assign(dna,j,length);
+			a.assign(dna,length+j,l-length-j);
+			pos=a.find(longest,0);
+			if(pos!=-1)
+			return longest;
+		}
+	}    
     return longest;
 }
 
