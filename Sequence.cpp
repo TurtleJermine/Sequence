@@ -94,7 +94,6 @@ string Sequence::longestRepeated()
     string a;
     for(int i=0;i<(l/2);i++)
     {
-    	length--;
     	for(int j=0;j<l-2*length;j++)
     	{
     		longest.assign(dna,j,length);
@@ -103,6 +102,7 @@ string Sequence::longestRepeated()
 			if(pos!=-1)
 			return longest;
 		}
+	length--;
 	}    
     return longest;
 }
